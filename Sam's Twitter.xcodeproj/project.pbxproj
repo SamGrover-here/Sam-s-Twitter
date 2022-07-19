@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		582D7E192886F5B700A9CECF /* Sam_s_TwitterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E182886F5B700A9CECF /* Sam_s_TwitterApp.swift */; };
-		582D7E1B2886F5B700A9CECF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E1A2886F5B700A9CECF /* ContentView.swift */; };
 		582D7E1D2886F5B900A9CECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582D7E1C2886F5B900A9CECF /* Assets.xcassets */; };
 		582D7E202886F5B900A9CECF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582D7E1F2886F5B900A9CECF /* Preview Assets.xcassets */; };
+		582D7E312886F6EA00A9CECF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E302886F6EA00A9CECF /* FeedView.swift */; };
+		582D7E352886F7B500A9CECF /* TweetsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E342886F7B500A9CECF /* TweetsRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		582D7E152886F5B700A9CECF /* Sam's Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sam's Twitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		582D7E182886F5B700A9CECF /* Sam_s_TwitterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sam_s_TwitterApp.swift; sourceTree = "<group>"; };
-		582D7E1A2886F5B700A9CECF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		582D7E1C2886F5B900A9CECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		582D7E1F2886F5B900A9CECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		582D7E302886F6EA00A9CECF /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		582D7E342886F7B500A9CECF /* TweetsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,11 @@
 		582D7E172886F5B700A9CECF /* Sam's Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				582D7E2B2886F66200A9CECF /* Core */,
+				582D7E2A2886F65900A9CECF /* Services */,
+				582D7E272886F60000A9CECF /* Model */,
+				582D7E262886F5E000A9CECF /* Extentions */,
 				582D7E182886F5B700A9CECF /* Sam_s_TwitterApp.swift */,
-				582D7E1A2886F5B700A9CECF /* ContentView.swift */,
 				582D7E1C2886F5B900A9CECF /* Assets.xcassets */,
 				582D7E1E2886F5B900A9CECF /* Preview Content */,
 			);
@@ -65,6 +70,76 @@
 				582D7E1F2886F5B900A9CECF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		582D7E262886F5E000A9CECF /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		582D7E272886F60000A9CECF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		582D7E2A2886F65900A9CECF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		582D7E2B2886F66200A9CECF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				582D7E2C2886F67900A9CECF /* Components */,
+				582D7E2D2886F68300A9CECF /* Feed */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		582D7E2C2886F67900A9CECF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				582D7E322886F79000A9CECF /* Tweets */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		582D7E2D2886F68300A9CECF /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				582D7E2F2886F6CE00A9CECF /* View */,
+				582D7E2E2886F6C800A9CECF /* ViewModel */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		582D7E2E2886F6C800A9CECF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		582D7E2F2886F6CE00A9CECF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				582D7E302886F6EA00A9CECF /* FeedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		582D7E322886F79000A9CECF /* Tweets */ = {
+			isa = PBXGroup;
+			children = (
+				582D7E342886F7B500A9CECF /* TweetsRowView.swift */,
+			);
+			path = Tweets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				582D7E1B2886F5B700A9CECF /* ContentView.swift in Sources */,
+				582D7E352886F7B500A9CECF /* TweetsRowView.swift in Sources */,
+				582D7E312886F6EA00A9CECF /* FeedView.swift in Sources */,
 				582D7E192886F5B700A9CECF /* Sam_s_TwitterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

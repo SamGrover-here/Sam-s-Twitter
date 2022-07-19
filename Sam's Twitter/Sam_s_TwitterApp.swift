@@ -11,7 +11,7 @@ import SwiftUI
 struct Sam_s_TwitterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeedView()
         }
     }
 }
