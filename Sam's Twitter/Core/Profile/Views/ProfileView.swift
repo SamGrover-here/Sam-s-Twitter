@@ -8,17 +8,28 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State private var selectedFilter: TweetFilterViewModel = .tweets
+    @Namespace var animation
     var body: some View {
         VStack(alignment: .leading){
             
 //extention Made Below
-            
+             
             //header
             HeaderView
             // action buttons: bell and edit profile
             ActionButtons
             //User info
             UserInfoDetail
+            //filter of tweets: tweets, replies and likes
+            TweetFilter
+            
+            //the tweet view
+            if selectedFilter == .tweets{
+                TweetsView
+            }else{
+                Text(selectedFilter.title)
+            }
             Spacer()
         }
     }
@@ -135,5 +146,43 @@ extension ProfileView{
             }.padding(.vertical)
             
         }.padding(.horizontal, 20)
+    }
+    var TweetFilter: some View{
+        HStack{
+            ForEach(TweetFilterViewModel.allCases, id: \.rawValue) { item in
+                VStack{
+                    Text(item.title)
+                        .font(.subheadline)
+                        .fontWeight(selectedFilter == item ? .semibold : .regular)
+                        .foregroundColor(selectedFilter == item ? .black : .gray)
+                    
+                    if selectedFilter == item {
+                        Capsule().foregroundColor(Color.blue)
+                            .frame(height: 3)
+                            .matchedGeometryEffect(id: "filter", in: animation)
+                    }else{
+                        Capsule().foregroundColor(Color.clear)
+                            .frame(height: 3)
+                    }
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut){
+                        self.selectedFilter = item
+                    }
+                }
+            }
+        }.overlay(Divider().offset(x: 0, y: 17))
+    }
+    
+    var TweetsView: some View{
+        ScrollView{
+            LazyVStack{
+                ForEach(0...9, id: \.self){
+                    _ in
+                    TweetsRowView()
+                        .padding()
+                }
+            }
+        }
     }
 }

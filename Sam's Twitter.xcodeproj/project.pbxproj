@@ -17,6 +17,7 @@
 		582D7E40288703B600A9CECF /* NotificationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E3F288703B600A9CECF /* NotificationTabView.swift */; };
 		582D7E442887084400A9CECF /* MessageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E432887084400A9CECF /* MessageTabView.swift */; };
 		582D7E49288708BE00A9CECF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E48288708BE00A9CECF /* ProfileView.swift */; };
+		582D7E4B28872C5E00A9CECF /* TweetFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E4A28872C5E00A9CECF /* TweetFilterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		582D7E3F288703B600A9CECF /* NotificationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTabView.swift; sourceTree = "<group>"; };
 		582D7E432887084400A9CECF /* MessageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTabView.swift; sourceTree = "<group>"; };
 		582D7E48288708BE00A9CECF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		582D7E4A28872C5E00A9CECF /* TweetFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFilterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		582D7E452887089700A9CECF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				582D7E4A28872C5E00A9CECF /* TweetFilterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				582D7E40288703B600A9CECF /* NotificationTabView.swift in Sources */,
 				582D7E312886F6EA00A9CECF /* FeedView.swift in Sources */,
 				582D7E3E288703A100A9CECF /* ExploreTabView.swift in Sources */,
+				582D7E4B28872C5E00A9CECF /* TweetFilterViewModel.swift in Sources */,
 				582D7E192886F5B700A9CECF /* Sam_s_TwitterApp.swift in Sources */,
 				582D7E382887026E00A9CECF /* MainTabView.swift in Sources */,
 			);
