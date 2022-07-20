@@ -126,25 +126,7 @@ extension ProfileView{
             .font(.caption)
             
             //MARK: Follower and Following
-            HStack(spacing: 24){
-                
-                HStack(spacing: 4){
-                    Text("10")
-                        .bold()
-                        .font(.subheadline)
-                    Text("Following")
-                        .foregroundColor(.gray)
-                        .font(.caption)
-                }
-                HStack(spacing: 4){
-                    Text("20k")
-                        .bold()
-                        .font(.subheadline)
-                    Text("Followers")
-                        .foregroundColor(.gray)
-                        .font(.caption)
-                }
-            }.padding(.vertical)
+            UserStatus()
             
         }.padding(.horizontal, 20)
     }
