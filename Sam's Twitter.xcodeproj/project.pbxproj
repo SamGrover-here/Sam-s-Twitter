@@ -30,6 +30,7 @@
 		585BD9A82887E92F00164401 /* RegisterationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9A72887E92F00164401 /* RegisterationView.swift */; };
 		585BD9AA2887EBBB00164401 /* Rounded Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9A92887EBBB00164401 /* Rounded Shape.swift */; };
 		585BD9AC2887F0FE00164401 /* CustonTextFeilds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9AB2887F0FE00164401 /* CustonTextFeilds.swift */; };
+		585BD9AF2887F3A300164401 /* AuthenticationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9AE2887F3A300164401 /* AuthenticationHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		585BD9A72887E92F00164401 /* RegisterationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationView.swift; sourceTree = "<group>"; };
 		585BD9A92887EBBB00164401 /* Rounded Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rounded Shape.swift"; sourceTree = "<group>"; };
 		585BD9AB2887F0FE00164401 /* CustonTextFeilds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonTextFeilds.swift; sourceTree = "<group>"; };
+		585BD9AE2887F3A300164401 /* AuthenticationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		582D7E2C2886F67900A9CECF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				585BD9AD2887F37500164401 /* Authentication */,
 				582D7E4E28873D7F00A9CECF /* Users */,
 				582D7E322886F79000A9CECF /* Tweets */,
 				585BD99E2887D3A900164401 /* TextArea.swift */,
@@ -348,6 +351,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		585BD9AD2887F37500164401 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				585BD9AE2887F3A300164401 /* AuthenticationHeader.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,6 +445,7 @@
 				585BD99F2887D3A900164401 /* TextArea.swift in Sources */,
 				582D7E5F288749FD00A9CECF /* ContentView.swift in Sources */,
 				585BD9A62887E92400164401 /* LoginView.swift in Sources */,
+				585BD9AF2887F3A300164401 /* AuthenticationHeader.swift in Sources */,
 				585BD99D2887D24000164401 /* NewTweetView.swift in Sources */,
 				582D7E6128874EED00A9CECF /* SideMenuOptionRowView.swift in Sources */,
 				582D7E4B28872C5E00A9CECF /* TweetFilterViewModel.swift in Sources */,
