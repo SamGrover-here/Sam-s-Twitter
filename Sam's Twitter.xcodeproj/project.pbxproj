@@ -26,6 +26,10 @@
 		582D7E6128874EED00A9CECF /* SideMenuOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D7E6028874EED00A9CECF /* SideMenuOptionRowView.swift */; };
 		585BD99D2887D24000164401 /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD99C2887D24000164401 /* NewTweetView.swift */; };
 		585BD99F2887D3A900164401 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD99E2887D3A900164401 /* TextArea.swift */; };
+		585BD9A62887E92400164401 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9A52887E92400164401 /* LoginView.swift */; };
+		585BD9A82887E92F00164401 /* RegisterationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9A72887E92F00164401 /* RegisterationView.swift */; };
+		585BD9AA2887EBBB00164401 /* Rounded Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9A92887EBBB00164401 /* Rounded Shape.swift */; };
+		585BD9AC2887F0FE00164401 /* CustonTextFeilds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BD9AB2887F0FE00164401 /* CustonTextFeilds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		582D7E6028874EED00A9CECF /* SideMenuOptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionRowView.swift; sourceTree = "<group>"; };
 		585BD99C2887D24000164401 /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		585BD99E2887D3A900164401 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
+		585BD9A52887E92400164401 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		585BD9A72887E92F00164401 /* RegisterationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationView.swift; sourceTree = "<group>"; };
+		585BD9A92887EBBB00164401 /* Rounded Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rounded Shape.swift"; sourceTree = "<group>"; };
+		585BD9AB2887F0FE00164401 /* CustonTextFeilds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonTextFeilds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 		582D7E2B2886F66200A9CECF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				585BD9A02887E8CD00164401 /* Authentication */,
 				585BD9992887D20F00164401 /* UploadTweet */,
 				582D7E51288743AE00A9CECF /* SideMenu */,
 				582D7E3C2887037500A9CECF /* MessageTab */,
@@ -144,6 +153,8 @@
 				582D7E4E28873D7F00A9CECF /* Users */,
 				582D7E322886F79000A9CECF /* Tweets */,
 				585BD99E2887D3A900164401 /* TextArea.swift */,
+				585BD9A92887EBBB00164401 /* Rounded Shape.swift */,
+				585BD9AB2887F0FE00164401 /* CustonTextFeilds.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -312,6 +323,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		585BD9A02887E8CD00164401 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				585BD9A12887E8D700164401 /* ViewModel */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		585BD9A12887E8D700164401 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				585BD9A42887E90800164401 /* Views */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		585BD9A42887E90800164401 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				585BD9A52887E92400164401 /* LoginView.swift */,
+				585BD9A72887E92F00164401 /* RegisterationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,14 +422,18 @@
 				582D7E49288708BE00A9CECF /* ProfileView.swift in Sources */,
 				582D7E352886F7B500A9CECF /* TweetsRowView.swift in Sources */,
 				582D7E442887084400A9CECF /* MessageTabView.swift in Sources */,
+				585BD9AA2887EBBB00164401 /* Rounded Shape.swift in Sources */,
 				582D7E40288703B600A9CECF /* NotificationTabView.swift in Sources */,
 				582D7E55288743F800A9CECF /* SideMenuView.swift in Sources */,
 				582D7E312886F6EA00A9CECF /* FeedView.swift in Sources */,
 				582D7E3E288703A100A9CECF /* ExploreTabView.swift in Sources */,
+				585BD9A82887E92F00164401 /* RegisterationView.swift in Sources */,
 				582D7E592887442C00A9CECF /* SideMenuViewModel.swift in Sources */,
+				585BD9AC2887F0FE00164401 /* CustonTextFeilds.swift in Sources */,
 				582D7E5028873D9400A9CECF /* UserRowView.swift in Sources */,
 				585BD99F2887D3A900164401 /* TextArea.swift in Sources */,
 				582D7E5F288749FD00A9CECF /* ContentView.swift in Sources */,
+				585BD9A62887E92400164401 /* LoginView.swift in Sources */,
 				585BD99D2887D24000164401 /* NewTweetView.swift in Sources */,
 				582D7E6128874EED00A9CECF /* SideMenuOptionRowView.swift in Sources */,
 				582D7E4B28872C5E00A9CECF /* TweetFilterViewModel.swift in Sources */,
