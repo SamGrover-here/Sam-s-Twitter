@@ -10,7 +10,9 @@ import SwiftUI
 struct CustonTextFeilds: View {
     let imageName: String
     let placeholder: String
+    let isSecureFeild: Bool? = false
     @Binding var text: String
+    
     var body: some View {
         VStack{
             HStack{
@@ -19,7 +21,12 @@ struct CustonTextFeilds: View {
                     .frame(width: 20, height: 20)
                     .foregroundColor(Color(.darkGray))
                 
-                TextField(placeholder, text: $text)
+                if isSecureFeild ?? false{
+                    SecureField(placeholder, text: $text)
+                }else{
+                    TextField(placeholder, text: $text)
+                }
+                
             }
             Divider().background(Color.gray)
         }
