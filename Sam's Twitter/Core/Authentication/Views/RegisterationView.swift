@@ -17,6 +17,9 @@ struct RegisterationView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack{
+            NavigationLink(destination: ProfileSelectorView(), isActive: $viewModel.didAuthenticateUser) {
+                //Label
+            }
             AuthenticationHeader(title1: "Get started.", title2: "Create your account")
             
             

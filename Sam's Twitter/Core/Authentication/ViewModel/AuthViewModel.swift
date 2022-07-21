@@ -11,6 +11,7 @@ import Firebase
 
 class AuthViewModel: ObservableObject{
     @Published var userSession: FirebaseAuth.User?
+    @Published var didAuthenticateUser = false
     init(){
         self.userSession = Auth.auth().currentUser
         
@@ -35,7 +36,7 @@ class AuthViewModel: ObservableObject{
                 print("DEBUG: failed to register with error: \(error.localizedDescription)")
             }
             guard let user = result?.user else {return}
-            self.userSession = user
+            //self.userSession = user
             
             print("DEBUG: Registered user sucessfully")
             print("DEBUG: Registering user named: \(self.userSession)")
@@ -45,7 +46,7 @@ class AuthViewModel: ObservableObject{
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("DEBUG: Did uploaded user data")
+                    self.didAuthenticateUser = true
                 }
         }
     }
