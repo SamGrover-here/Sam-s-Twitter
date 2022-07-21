@@ -23,11 +23,11 @@ struct RegisterationView: View {
             VStack(spacing: 40){
                 CustonTextFeilds(imageName: "envelope", placeholder: "Email", text: $email)
                 
-                CustonTextFeilds(imageName: "eye.fill", placeholder: "User name", text: $userName)
+                CustonTextFeilds(imageName: "at", placeholder: "User name", text: $userName)
                 
                 CustonTextFeilds(imageName: "person", placeholder: "Full name", text: $fullName)
                 
-                CustonTextFeilds(imageName: "lock", placeholder: "Password", text: $password)
+                CustonTextFeilds(imageName: "lock", placeholder: "Password", text: $password, showEye: true)
             }.padding(32)
             
             

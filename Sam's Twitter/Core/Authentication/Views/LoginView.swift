@@ -22,7 +22,7 @@ struct LoginView: View {
             VStack(spacing: 40){
                 CustonTextFeilds(imageName: "envelope", placeholder: "Email", text: $email)
                 
-                CustonTextFeilds(imageName: "lock.fill", placeholder: "Password", text: $password)
+                CustonTextFeilds(imageName: "lock.fill", placeholder: "Password", text: $password, showEye: true)
             }.padding(.horizontal, 32)
                 .padding(.top, 42)
                 
