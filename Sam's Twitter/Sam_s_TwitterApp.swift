@@ -18,9 +18,8 @@ struct Sam_s_TwitterApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                //ContentView()
+                ContentView()
                 // LoginView() if there is no user logged in
-                ProfileSelectorView()
             }.environmentObject(viewModel)
         }
     }

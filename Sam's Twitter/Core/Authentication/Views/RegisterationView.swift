@@ -36,7 +36,7 @@ struct RegisterationView: View {
             
             Button {
                 // Register here
-                viewModel.register(withEmail: email, password: password, fullname: fullName, username: userName)
+                viewModel.register(withEmail: email, password: password, fullname: fullName, username: userName, profileImageUrl: "")
                 
             } label: {
                 Text("Sign Up!")

@@ -11,6 +11,7 @@ struct ProfileSelectorView: View {
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?   // Image selecteded iin Uikit
     @State private var profileImage: Image?
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         VStack{
             AuthenticationHeader(title1: "Customize me,", title2: "Add a profile photo,")
@@ -44,9 +45,9 @@ struct ProfileSelectorView: View {
                 ImagePicker(selectedImage: $selectedImage)
             }.padding(.top, 44)
             Spacer()
-            if profileImage != nil{
+            if let selectedImage = selectedImage {
                 Button {
-                    // Register here
+                    viewModel.uploadProfileImage(selectedImage)
                     print("DEBUG: finished regestering user")
                 } label: {
                     Text("Continue")
@@ -59,7 +60,6 @@ struct ProfileSelectorView: View {
                         .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 0)
                 }
             }
-
             Spacer()
         }.ignoresSafeArea()
     }
