@@ -32,6 +32,7 @@ class AuthViewModel: ObservableObject{
             }
             guard let user = result?.user else {return}
             self.userSession = user
+            self.featchUser()
             print("DEBUG: Logged in user sucessfully")
         }
     }
@@ -66,11 +67,15 @@ class AuthViewModel: ObservableObject{
     }
     
      func uploadProfileImage(_ image: UIImage){
-        guard let uid = tempUserSession?.uid else {return}
-        ImageUploader.uploadImage(image: image) { profileImageUrl in
-            Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl": profileImageUrl]) { _ in
-                self.userSession = self.tempUserSession
-            }
+         guard let uid = tempUserSession?.uid else {return}
+         
+         ImageUploader.uploadImage(image: image) { profileImageUrl in
+             Firestore.firestore().collection("users")
+                 .document(uid)
+                 .updateData(["profileImageUrl": profileImageUrl]) { _ in
+                     self.userSession = self.tempUserSession
+                     self.featchUser()
+                 }
         }
     }
     

@@ -40,6 +40,7 @@ struct ProfileView: View {
             }
             Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 
@@ -69,8 +70,9 @@ extension ProfileView{
                             .resizable()
                             .frame(width: 20, height: 16)
                             .foregroundColor(.white)
-                            .offset(x: 11, y: 12)
+                            .offset(x: 16, y: -4)
                     }
+                    //MARK: Profile image
                     ZStack{
                         
                         Circle().foregroundColor(.white).frame(width: 65, height: 72)
@@ -110,13 +112,13 @@ extension ProfileView{
             
             //MARK: Name, Username and Bio
             HStack{
-                Text("Sam Grover")
+                Text(user.fullname)
                     .font(.title2)
                     .bold()
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundColor(Color.blue)
             }
-            Text("@Ironman")
+            Text("@\(user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
