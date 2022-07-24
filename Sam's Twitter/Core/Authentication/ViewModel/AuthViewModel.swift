@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Firebase
+import Kingfisher
 
 class AuthViewModel: ObservableObject{
     @Published var userSession: FirebaseAuth.User?

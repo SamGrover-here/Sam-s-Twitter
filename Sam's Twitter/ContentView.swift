@@ -60,21 +60,7 @@ extension ContentView{
                             showMenu.toggle()
                         }
                     } label: {
-                        if user.profileImageUrl == ""{
-                            Image(systemName: "person.crop.circle.badge.plus")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 32, height: 32)
-                                .foregroundColor(.blue)
-                        }else{
-                            
-                            //MARK: Profile Image Uploaded
-                            KFImage(URL(string: user.profileImageUrl))
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .frame(width: 32, height: 32)
-                        }
+                        ProfilePic().frame(width: 32, height: 32)
                     }
                 }
             }

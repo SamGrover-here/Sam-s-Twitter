@@ -19,21 +19,7 @@ struct SideMenuView: View {
                     VStack(alignment: .leading, spacing: 4){
                         
                         //MARK: Default Profile Image
-                        if user.profileImageUrl == ""{
-                            Image(systemName: "person.crop.circle.badge.plus")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 48, height: 48)
-                                .foregroundColor(.blue)
-                        }else{
-                            
-                            //MARK: Profile Image Uploaded
-                            KFImage(URL(string: user.profileImageUrl))
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .frame(width: 48, height: 48)
-                        }
+                        ProfilePic().frame(width: 48, height: 48)
                         Text(user.fullname)
                             .font(.headline)
                         
@@ -51,7 +37,7 @@ struct SideMenuView: View {
                     
                     if viewModel == .profile{
                         NavigationLink {
-                            ProfileView()
+                            ProfileView(user: user)
                         } label: {
                             SideMenuOptionRowView(viewModel: viewModel)
                         }
