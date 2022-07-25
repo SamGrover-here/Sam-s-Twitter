@@ -8,31 +8,35 @@
 import SwiftUI
 
 struct TweetsRowView: View {
+    let tweet: Tweet
+    
     var body: some View {
         VStack(alignment: .leading){
             //MARK: Profile Image
             HStack(alignment: .top, spacing: 12){
-                Circle().frame(width: 56, height: 56)
+                ProfilePic().frame(width: 56, height: 56)
                     .foregroundColor(Color.blue)
                 
                 //MARK: User Info
                 VStack(alignment: .leading, spacing: 5){
-                    HStack{
-                        Text("Sam Grover")
-                            .font(.subheadline)
-                            .bold()
-                        
-                        Text("@Ironman")
-                            .foregroundColor(.gray)
-                            .font(.caption)
-                        
-                        Text("2w")
-                            .foregroundColor(.gray)
-                            .font(.caption)
+                    if let user = tweet.user{
+                        HStack{
+                            Text(user.fullname)
+                                .font(.subheadline)
+                                .bold()
+                            
+                            Text("@\(user.username)")
+                                .foregroundColor(.gray)
+                                .font(.caption)
+                            
+                            Text("2w")
+                                .foregroundColor(.gray)
+                                .font(.caption)
+                        }
                     }
                     
                     //MARK: Tweet
-                    Text("I am Ironman")
+                    Text(tweet.caption)
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
                 }
@@ -76,8 +80,8 @@ struct TweetsRowView: View {
     }
 }
 
-struct TweetsRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetsRowView()
-    }
-}
+//struct TweetsRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TweetsRowView()
+//    }
+//}

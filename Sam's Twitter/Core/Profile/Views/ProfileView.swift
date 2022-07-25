@@ -12,11 +12,13 @@ struct ProfileView: View {
     @State private var selectedFilter: TweetFilterViewModel = .tweets
     @Namespace var animation
     @EnvironmentObject var viewModel: AuthViewModel
-    private let user: User
+    @ObservedObject var profileViewModel: ProfileViewModel
+
     
     init(user: User){
-        self.user = user
+        self.profileViewModel = ProfileViewModel(user: user)
     }
+    
     @Environment(\.presentationMode) var mode
     var body: some View {
         VStack(alignment: .leading){
@@ -112,13 +114,13 @@ extension ProfileView{
             
             //MARK: Name, Username and Bio
             HStack{
-                Text(user.fullname)
+                Text(profileViewModel.user.fullname)
                     .font(.title2)
                     .bold()
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundColor(Color.blue)
             }
-            Text("@\(user.username)")
+            Text("@\(profileViewModel.user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
@@ -177,9 +179,9 @@ extension ProfileView{
     var TweetsView: some View{
         ScrollView{
             LazyVStack{
-                ForEach(0...9, id: \.self){
-                    _ in
-                    TweetsRowView()
+                ForEach(profileViewModel.tweets){
+                    tweet in
+                    TweetsRowView(tweet: tweet)
                         .padding()
                 }
             }
