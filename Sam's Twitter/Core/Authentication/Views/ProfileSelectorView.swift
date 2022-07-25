@@ -22,8 +22,9 @@ struct ProfileSelectorView: View {
             HStack{
                 Spacer()
                 Button {
-                    selectedImage = UIImage()
-                    viewModel.currentUser?.profileImageUrl = ""
+                    let uiImage = UIImage(systemName: "person.crop.circle.badge.plus")
+                    selectedImage = uiImage
+                    
                 } label: {
                     Text("Skip").padding(.horizontal, 30)
                         .padding(.vertical)
@@ -65,6 +66,7 @@ struct ProfileSelectorView: View {
                 Button {
                     viewModel.uploadProfileImage(selectedImage)
                     print("DEBUG: finished regestering user")
+                    //ContentView().mainInterfaceView
                     
                 } label: {
                     Text("Continue")

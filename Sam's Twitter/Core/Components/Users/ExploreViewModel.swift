@@ -12,12 +12,13 @@ class ExploreViewModel: ObservableObject {
     let service = UserService()
     
     init(){
-        
+        fetchUsers()
     }
     
     func fetchUsers(){
         service.featchUsers(completion: { users in
             self.users = users
+            
             print("DEBUG: Users are \(users)")
         })
     }

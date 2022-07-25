@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExploreTabView: View {
     @ObservedObject var viewModel = ExploreViewModel()
+    
     var body: some View {
         VStack{
             ScrollView{

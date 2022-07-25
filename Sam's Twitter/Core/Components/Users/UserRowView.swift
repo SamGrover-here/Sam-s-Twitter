@@ -12,9 +12,15 @@ struct UserRowView: View {
     let user: User
     var body: some View {
         VStack {
-            HStack{
-                ProfilePic().frame(width: 48, height: 48)
+            HStack(spacing: 12){
+                KFImage(URL(string: user.profileImageUrl))
+                    .resizable()
+                    .clipShape(Circle())
+                    .scaledToFill()
+                    .frame(width: 48, height: 48)
+                
                 VStack(alignment: .leading,spacing: 5){
+                    
                     HStack(spacing: 2){
                         Text(user.fullname)
                             .font(.subheadline).bold()
