@@ -9,8 +9,21 @@ import Foundation
 
 class ExploreViewModel: ObservableObject {
     @Published var users = [User]()
-    let service = UserService()
+    @Published var searchText = ""
     
+    var searchedUsers: [User]{
+        if searchText.isEmpty{
+            return users
+        }else{
+            let lowercaseQuery = searchText.lowercased()
+            return users.filter({
+                $0.username.contains(lowercaseQuery) ||
+                $0.fullname.lowercased().contains(lowercaseQuery)
+            })
+        }
+    }
+    
+    let service = UserService()
     init(){
         fetchUsers()
     }

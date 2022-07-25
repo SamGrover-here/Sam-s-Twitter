@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ExploreTabView: View {
     @ObservedObject var viewModel = ExploreViewModel()
+
     
     var body: some View {
         VStack{
+            SearchBar(text: $viewModel.searchText).padding()
             ScrollView{
                 VStack{
-                    ForEach(viewModel.users){ user in
+                    ForEach(viewModel.searchedUsers){ user in
                         NavigationLink {
                            ProfileView(user: user)
                         } label: {
