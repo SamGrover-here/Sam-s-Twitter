@@ -37,7 +37,7 @@ class AuthViewModel: ObservableObject{
         }
     }
     
-    func register(withEmail email: String, password: String, fullname: String, username: String, profileImageUrl: String){
+    func register(withEmail email: String, password: String, fullname: String, username: String){
         Auth.auth().createUser(withEmail: email, password: password){ result, error in
             if let error = error{
                 print("DEBUG: failed to register with error: \(error.localizedDescription)")
@@ -48,7 +48,7 @@ class AuthViewModel: ObservableObject{
 //            print("DEBUG: Registered user sucessfully")
 //            print("DEBUG: Registering user named: \(self.userSession)")
             
-            let data = ["email": email, "username": username.lowercased(), "fullname": fullname, "uid": user.uid, "profileImageUrl": profileImageUrl]
+            let data = ["email": email, "username": username.lowercased(), "fullname": fullname, "uid": user.uid]
             
             Firestore.firestore().collection("users")
                 .document(user.uid)
@@ -74,9 +74,18 @@ class AuthViewModel: ObservableObject{
                  .document(uid)
                  .updateData(["profileImageUrl": profileImageUrl]) { _ in
                      self.userSession = self.tempUserSession
-                     self.featchUser()
+                     
+                     print("DEBUG: Updated the firebase")
                  }
-        }
+         }
+//         ImageUploader.uploadImage(image: image) { profileImageUrl in
+//             Firestore.firestore().collection("users")
+//                 .document(uid)
+//                 .updateData(["profileImageUrl": profileImageUrl]) { _ in
+//                     self.userSession = self.tempUserSession
+//                     self.featchUser()
+//                 }
+//        }
     }
     
     func featchUser(){

@@ -11,6 +11,6 @@ struct User: Identifiable, Decodable{
     @DocumentID var id: String?
     let username: String
     let fullname: String
-    let profileImageUrl: String
+    var profileImageUrl: String
     let email: String
 }

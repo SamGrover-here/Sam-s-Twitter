@@ -19,7 +19,9 @@ struct Sam_s_TwitterApp: App {
         WindowGroup {
             NavigationView{
                 ContentView()
-                // LoginView() if there is no user logged in
+                //LoginView() //if there is no user logged in
+                
+                //ProfileSelectorView()
             }.environmentObject(viewModel)
         }
     }

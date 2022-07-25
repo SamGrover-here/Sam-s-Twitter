@@ -12,9 +12,23 @@ struct ProfileSelectorView: View {
     @State private var selectedImage: UIImage?   // Image selecteded iin Uikit
     @State private var profileImage: Image?
     @EnvironmentObject var viewModel: AuthViewModel
+    
+    
     var body: some View {
         VStack{
             AuthenticationHeader(title1: "Customize me,", title2: "Add a profile photo,")
+            
+            //MARK: Skip button
+            HStack{
+                Spacer()
+                Button {
+                    selectedImage = UIImage()
+                    viewModel.currentUser?.profileImageUrl = ""
+                } label: {
+                    Text("Skip").padding(.horizontal, 30)
+                        .padding(.vertical)
+                }
+            }
             Button {
                 showImagePicker.toggle()
             } label: {
@@ -44,11 +58,14 @@ struct ProfileSelectorView: View {
             }.sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
                 ImagePicker(selectedImage: $selectedImage)
             }.padding(.top, 44)
+            
+            
             Spacer()
             if let selectedImage = selectedImage {
                 Button {
                     viewModel.uploadProfileImage(selectedImage)
                     print("DEBUG: finished regestering user")
+                    
                 } label: {
                     Text("Continue")
                         .font(.headline)
@@ -61,6 +78,7 @@ struct ProfileSelectorView: View {
                 }
             }
             Spacer()
+            
         }.ignoresSafeArea()
     }
     func loadImage(){
