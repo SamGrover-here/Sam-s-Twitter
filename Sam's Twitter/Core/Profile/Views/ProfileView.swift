@@ -34,12 +34,7 @@ struct ProfileView: View {
             //filter of tweets: tweets, replies and likes
             TweetFilter
             
-            //the tweet view
-            if selectedFilter == .tweets{
-                TweetsView
-            }else{
-                Text(selectedFilter.title)
-            }
+            TweetsView
             Spacer()
         }
         .navigationBarHidden(true)
@@ -94,8 +89,11 @@ extension ProfileView{
                 .font(.title3)
                 .padding(6)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 0.75))
-            Button {
-                
+            
+            
+            // MARK: Edit profile
+            NavigationLink {
+                //ProfileSelectorView() -> update profile
             } label: {
                 Text(profileViewModel.actionButtonTitle)
                     .font(.subheadline)
@@ -103,7 +101,8 @@ extension ProfileView{
                     .frame(width: 120, height: 32)
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 0.75))
                     .foregroundColor(Color.black)
-            }
+            }.navigationBarHidden(true)
+
             
         }
         .padding(.trailing)
