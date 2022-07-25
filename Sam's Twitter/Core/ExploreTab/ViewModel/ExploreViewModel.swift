@@ -32,7 +32,7 @@ class ExploreViewModel: ObservableObject {
         service.featchUsers(completion: { users in
             self.users = users
             
-            print("DEBUG: Users are \(users)")
+            //print("DEBUG: Users are \(users)")
         })
     }
 }
