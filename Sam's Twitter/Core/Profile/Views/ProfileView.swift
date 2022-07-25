@@ -97,7 +97,7 @@ extension ProfileView{
             Button {
                 
             } label: {
-                Text("Edit Profile")
+                Text(profileViewModel.actionButtonTitle)
                     .font(.subheadline)
                     .bold()
                     .frame(width: 120, height: 32)
@@ -117,8 +117,7 @@ extension ProfileView{
                 Text(profileViewModel.user.fullname)
                     .font(.title2)
                     .bold()
-                Image(systemName: "checkmark.seal.fill")
-                    .foregroundColor(Color.blue)
+                VerifiedBadge()
             }
             Text("@\(profileViewModel.user.username)")
                 .font(.subheadline)
@@ -179,7 +178,7 @@ extension ProfileView{
     var TweetsView: some View{
         ScrollView{
             LazyVStack{
-                ForEach(profileViewModel.tweets){
+                ForEach(profileViewModel.tweets(forFilter: self.selectedFilter)){
                     tweet in
                     TweetsRowView(tweet: tweet)
                         .padding()
